@@ -12,12 +12,14 @@ public class TopicoDto {
 	private String titulo;
 	private String mensagem;
 	private LocalDateTime dataCriacao;
+	private String topicoCurso;
 
 	public TopicoDto(Topico topico) {
 		this.id = topico.getId();
 		this.titulo = topico.getTitulo();
 		this.mensagem = topico.getMensagem();
 		this.dataCriacao = topico.getDataCriacao();
+		this.topicoCurso = topico.getCurso().getNome();
 	}
 
 	public Long getId() {
@@ -34,6 +36,10 @@ public class TopicoDto {
 
 	public LocalDateTime getDataCriacao() {
 		return dataCriacao;
+	}
+
+	public String getTopicoCurso() {
+		return topicoCurso;
 	}
 
 	public static List<TopicoDto> converter(List<Topico> topicos) {

@@ -9,6 +9,8 @@ import br.com.alura.forum.model.Topico;
 public interface TopicoRepository  extends JpaRepository<Topico, Long>{
 
 	List<Topico> findByCursoNome(String nomeCurso);
+	List<Topico> findByCursoNomeContaining(String nomeCurso);
+	List<Topico> findByCursoNomeLike(String nomeCurso);
 	
 	
 //	@Query("SELECT t FROM Topico where t.curso.nome = :nomeCurso")
